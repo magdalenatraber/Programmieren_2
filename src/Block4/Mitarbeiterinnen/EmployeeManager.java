@@ -24,15 +24,22 @@ public class EmployeeManager {
         return sum;
     }
 
-    public HashMap<String, Double> getSalaryByDepartment() {
+   /* public HashMap<String, Double> getSalaryByDepartment() {
         HashMap<String, Double> sortedByDepartment = new HashMap<>();
         for (Employee e : management) {
-            sortedByDepartment.put(e.department, e.getFullSalary());
+            if(sortedByDepartment.get(e.department) != null)
+            sortedByDepartment.put(e.department, sortedByDepartment.get(e.department)+ e.getFullSalary());
+            else
+                sortedByDepartment.put(e.department,e.getFullSalary());
         }
-
-
-        return sortedByDepartment;
-    }
-
+   return sortedByDepartment;
+    } */
+   public HashMap<String, Double> getSalaryByDepartment() {
+       HashMap<String, Double> list = new HashMap<>();
+       for (Employee e : management) {
+           list.put(e.department, list.getOrDefault(e.department, 0.0) + e.getFullSalary());
+       }
+       return list;
+   }
 
 }

@@ -16,6 +16,16 @@ d.addEmployee(c);
 
         System.out.println(d.calcTotalSalary());
         System.out.println(d.getSalaryByDepartment());
+        System.out.println("------------");
+        EmployeeManager e = new EmployeeManager();
+        e.addEmployee(a);
+        e.addEmployee(b);
+        e.addEmployee(c);
+
+        System.out.println(e.calcTotalSalary());
+        System.out.println(e.getSalaryByDepartment());
+
+
 
     }
 }
